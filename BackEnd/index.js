@@ -3,7 +3,13 @@ const mongoose = require("mongoose");
 
 const app = express();
 
-mongoose.set("strictQuery", true);
+
+// middleware 
+
+app.use("/",(req,res,next)=>{
+  res.send("The severs is started")
+})
+
 mongoose
   .connect(
     "mongodb+srv://admin:CeMvZP6DGipop03d@cluster0.vvqt6br.mongodb.net/book_store?retryWrites=true&w=majority"
