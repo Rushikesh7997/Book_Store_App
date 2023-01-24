@@ -1,14 +1,13 @@
 const express = require("express");
 const mongoose = require("mongoose");
-
+const router = require("./routes/book_routes")
 const app = express();
 
 
 // middleware 
 
-app.use("/",(req,res,next)=>{
-  res.send("The severs is started")
-})
+app.use("/books",router)
+
 
 mongoose
   .connect(
