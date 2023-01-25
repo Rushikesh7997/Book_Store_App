@@ -5,8 +5,10 @@ const app = express();
 
 
 // middleware 
-
+app.use(express.json());
 app.use("/books",router)
+
+mongoose.set('strictQuery', false);
 
 
 mongoose
